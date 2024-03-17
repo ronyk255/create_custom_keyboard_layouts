@@ -8,6 +8,9 @@
 
 <h1 align="center">Create_Custom_keyboard_layouts</h1>
 
+<p align="center">
+ </p>
+
 <!-- Status -->
 
 <!-- <h4 align="center"> 
@@ -18,9 +21,9 @@
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
-  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
+  <a href="#memo-license">License</a> &#xa0; | &#xa0;
   <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
 </p>
 
@@ -39,20 +42,15 @@ The final intent of this python code is to generate a text file with 4 8x8 matri
       - AlGr\
       - Shift+AltGr\
 
-## :sparkles: Features ##
-
-:Create various layouts into 8x8 matrices of the current keyboard input settings\
-
-
 ## :white_check_mark: Requirements ##
 
-Before starting :checkered_flag:, you need to have python3 installed and python package codecs for decoding purposes.
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
 
 ## :checkered_flag: Starting ##
 
 ```bash
 # Clone this project
-$ git clone https://github.com/ronyk255/create_custom_keyboard_layouts
+$ git clone https://github.com/{{ronyk255}}/create_custom_keyboard_layouts
 
 # Access
 $ cd create_custom_keyboard_layouts
@@ -61,11 +59,16 @@ $ cd create_custom_keyboard_layouts
 $ pip install codecs
 
 # Run the project
-$ python3 createCustomKeyBoardLatyouts.py
+$ python3 create_custom_keyboard_layouts.py
+
+```
+
+## :memo: License ##
+
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-## Made  by 
-<a href="https://github.com/ronyk255}" target="_blank">{{Rony Kuriakose}}</a>
+Developed with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
 
 &#xa0;
 
