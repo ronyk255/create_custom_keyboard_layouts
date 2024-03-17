@@ -33,10 +33,11 @@ This project is a python code that gets then input keyboard layout settings by u
 The python code then cycles through the input layout settings to get the keycodes and keysym values  associated with each key on the keyboard. 
 The python code also includes checking for different modifier settings while cycling through the input keyboard settings.
 The final intent of this python code is to generate a text file with 4 8x8 matrices showing the keyboard layouts for the following keyboard modifier types:
-      - No Modifier
-      - Shift
-      - AlGr
-      - Shift+AltGr
+
+      - No Modifier\
+      - Shift\
+      - AlGr\
+      - Shift+AltGr\
 
 ## :sparkles: Features ##
 
