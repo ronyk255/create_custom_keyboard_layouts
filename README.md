@@ -63,7 +63,7 @@ $ python3 create_custom_keyboard_layouts.py
 
 ```
 
-Developed with :heart: by <a href="https://github.com/ronyk255" target="_blank">Rony Kuriakose</a>
+Developed by <a href="https://github.com/ronyk255" target="_blank">Rony Kuriakose</a>
 
 &#xa0;
 
