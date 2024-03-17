@@ -50,7 +50,7 @@ Before starting :checkered_flag:, you need to have git and python3 installed
 
 ```bash
 # Clone this project
-$ git clone https://github.com/{{ronyk255}}/create_custom_keyboard_layouts
+$ git clone https://github.com/ronyk255/create_custom_keyboard_layouts
 
 # Access
 $ cd create_custom_keyboard_layouts
@@ -63,7 +63,7 @@ $ python3 create_custom_keyboard_layouts.py
 
 ```
 
-Developed with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{Rony Kuriakose}}</a>
+Developed with :heart: by <a href="https://github.com/ronyk255" target="_blank">Rony Kuriakose</a>
 
 &#xa0;
 
