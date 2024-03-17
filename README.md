@@ -78,20 +78,20 @@ $ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/create_custom_keyboard_l
 $ cd create_custom_keyboard_layouts
 
 # Install dependencies
-$ yarn
+$ sudo apt-get install python3
+$ sudo apt-get install python3-pip
+$ pip install codecs
 
 # Run the project
-$ yarn start
+$ python3 createCustomKeyBoardLatyouts.py
 
 # The server will initialize in the <http://localhost:3000>
 ```
 
-## :memo: License ##
-
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
+
+Made with  <a href="https://github.com/rony255}" target="_blank">{{Rony Kuriakose}}</a>
 
 &#xa0;
 
