@@ -35,10 +35,8 @@
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
   <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
 </p>
 
@@ -46,52 +44,42 @@
 
 ## :dart: About ##
 
-Describe your project
+The project  aims to provide an easy way for users to to  create and customize their own keyboard layouts.
+This project is a python code that gets then input keyboard layout settings by using the xmodmap tool. 
+The python code then cycles through the input layout settings to get the keycodes and keysym values  associated with each key on the keyboard. 
+The python code also includes checking for different modifier settings while cycling through the input keyboard settings.
+The final intent of this python code is to generate a text file with 4 8x8 matrices showing the keyboard layouts for the following keyboard modifier types:
+      - No Modifier
+      - Shift
+      - AlGr
+      - Shift+AltGr
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+:Create various layouts into 8x8 matrices of the current keyboard input settings\
 
-## :rocket: Technologies ##
-
-The following tools were used in this project:
-
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
 
 ## :white_check_mark: Requirements ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+Before starting :checkered_flag:, you need to have python3 installed and python package codecs for decoding purposes.
 
 ## :checkered_flag: Starting ##
 
 ```bash
 # Clone this project
-$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/create_custom_keyboard_layouts
+$ git clone https://github.com/ronyk255/create_custom_keyboard_layouts
 
 # Access
 $ cd create_custom_keyboard_layouts
 
 # Install dependencies
-$ sudo apt-get install python3
-$ sudo apt-get install python3-pip
 $ pip install codecs
 
 # Run the project
 $ python3 createCustomKeyBoardLatyouts.py
 
-# The server will initialize in the <http://localhost:3000>
-```
 
-
-
-
-Made with  <a href="https://github.com/rony255}" target="_blank">{{Rony Kuriakose}}</a>
+Developed by <a href="https://github.com/ronyk255}" target="_blank">{{Rony Kuriakose}}</a>
 
 &#xa0;
 
