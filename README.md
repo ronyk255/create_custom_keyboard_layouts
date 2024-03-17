@@ -44,7 +44,7 @@ The final intent of this python code is to generate a text file with 4 8x8 matri
 
 ## :white_check_mark: Requirements ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+Before starting :checkered_flag:, you need to have git and python3 installed
 
 ## :checkered_flag: Starting ##
 
@@ -62,11 +62,6 @@ $ pip install codecs
 $ python3 create_custom_keyboard_layouts.py
 
 ```
-
-## :memo: License ##
-
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
-
 
 Developed with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
 
