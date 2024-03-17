@@ -6,7 +6,7 @@
   <!-- <a href="https://create_custom_keyboard_layouts.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">Create_custom_keyboard_layouts</h1>
+<h1 align="center">Create_Custom_keyboard_layouts</h1>
 
 <!-- Status -->
 
@@ -64,7 +64,8 @@ $ pip install codecs
 $ python3 createCustomKeyBoardLatyouts.py
 
 
-Developed by <a href="https://github.com/ronyk255}" target="_blank">{{Rony Kuriakose}}</a>
+## Made  by 
+<a href="https://github.com/ronyk255}" target="_blank">{{Rony Kuriakose}}</a>
 
 &#xa0;
 
