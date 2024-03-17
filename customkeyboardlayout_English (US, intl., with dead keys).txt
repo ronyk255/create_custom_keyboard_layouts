@@ -1,0 +1,49 @@
+const unsigned char keylookup[SWMAT_LAYOUTS][MODIFIER_LAYERS][ROWS*COLS] {				
+	 {				
+	 // English (US, intl., with dead keys)				
+		 // No Modifier (Lower case)				
+		 {				
+         'q',                  'w',                  'e',                  'r',                  'u',                  'i',                  'o',                  'p',         				
+         ASCII_TAB,            ASCII_CAPS,           ASCII_SHFL,           't',                  'y',                  ' ',                  ASCII_BKSP,           '[',         				
+         'a',                  'x',                  ASCII_PGUP,           'f',                  'j',                  'k',                  'l',                  ';',         				
+         ASCII_SEND,           0x00,                 ASCII_SHFR,           'g',                  'h',                  ''h',',               ']',                  '\'',        				
+         'z',                  's',                  'c',                  'v',                  'm',                  ',',                  '.',                  '\\',        				
+         ASCII_NEWL,           ASCII_NEWR,           0x00,                 'b',                  'n',                  ASCII_ALTG,           ASCII_SPCL,           '/',         				
+         '`',                  'd',                  ASCII_PGDN,           '5',                  '6',                  '=',                  ASCII_CR,             '-',         				
+         '1',                  '2',                  '3',                  '4',                  '7',                  '8',                  '9',                  '0',         				
+		 }, 				
+		 // Shift (upper case)				
+		 {				
+         'Q',                  'W',                  'E',                  'R',                  'U',                  'I',                  'O',                  'P',         				
+         ASCII_TAB,            ASCII_CAPS,           ASCII_SHFL,           'T',                  'Y',                  ' ',                  ASCII_BKSP,           '{',         				
+         'A',                  'X',                  ASCII_PGUP,           'F',                  'J',                  'K',                  'L',                  ':',         				
+         ASCII_SEND,           0x00,                 ASCII_SHFR,           'G',                  'H',                  ''H',',               '}',                  '"',         				
+         'Z',                  'S',                  'C',                  'V',                  'M',                  '<',                  '>',                  '|',         				
+         ASCII_NEWL,           ASCII_NEWR,           0x00,                 'B',                  'N',                  ASCII_ALTG,           ASCII_SPCL,           '?',         				
+         '~',                  'D',                  ASCII_PGDN,           '%',                  '^',                  '+',                  ASCII_CR,             '_',         				
+         '!',                  '@',                  '#',                  '$',                  '&',                  '*',                  '(',                  ')',         				
+		 }, 				
+		 //AltGr (lower case) x, k, %				
+		 {				
+         '0x00e4',             '0x00e5',             '0x00e9',             '0x00ae',             '0x00fa',             '0x00ed',             '0x00f3',             '0x00f6',    				
+         ASCII_TAB,            ASCII_CAPS,           ASCII_SHFL,           '0x00fe',             '0x00fc',             ' ',                  ASCII_BKSP,           '0x00ab',    				
+         '0x00e1',             'x',                  ASCII_PGUP,           'f',                  'j',                  '0x13bd',             '0x00f8',             '0x00b6',    				
+         ASCII_SEND,           0x00,                 ASCII_SHFR,           'g',                  'h',                  ''h',',               '0x00bb',             '\'',        				
+         '0x00e6',             '0x00df',             '0x00a9',             'v',                  '0x00b5',             '0x00e7',             '0xfe56',             '0x00ac',    				
+         ASCII_NEWL,           ASCII_NEWR,           0x00,                 'b',                  '0x00f1',             ASCII_ALTG,           ASCII_SPCL,           '0x00bf',    				
+         '`',                  '0x00f0',             ASCII_PGDN,           '0x20ac',             '0x00bc',             '0x00d7',             ASCII_CR,             '0x00a5',    				
+         '0x00a1',             '0x00b2',             '0x00b3',             '0x00a4',             '0x00bd',             '0x00be',             '0x0ad0',             '0x0ad1',    				
+		 }, 				
+		 // Shift+AltGr (upper case) {, X, K 				
+		 {				
+         '0x00c4',             '0x00c5',             '0x00c9',             '0x00ae',             '0x00da',             '0x00cd',             '0x00d3',             '0x00d6',    				
+         ASCII_TAB,            ASCII_CAPS,           ASCII_SHFL,           '0x00de',             '0x00dc',             ' ',                  ASCII_BKSP,           '0x0ad2',    				
+         '0x00c1',             'X',                  ASCII_PGUP,           'F',                  'J',                  '0x13bc',             '0x00d8',             '0x00b0',    				
+         ASCII_SEND,           0x00,                 ASCII_SHFR,           'G',                  'H',                  ''H',',               '0x0ad3',             '\"',        				
+         '0x00c6',             '0x00a7',             '0x00a2',             'V',                  '0x00b5',             '0x00c7',             '0xfe5a',             '0x00a6',    				
+         ASCII_NEWL,           ASCII_NEWR,           0x00,                 'B',                  '0x00d1',             ASCII_ALTG,           ASCII_SPCL,           '0xfe61',    				
+         '~',                  '0x00d0',             ASCII_PGDN,           '0xfe5b',             '^',                  '0x00f7',             ASCII_CR,             '0xfe60',    				
+         '0x00b9',             '0xfe59',             '0xfe54',             '0x00a3',             '0xfe62',             '0xfe5c',             '0xfe55',             '0xfe58',				
+		 }, 
+	 }, 
+};
