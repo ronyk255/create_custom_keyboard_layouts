@@ -4,8 +4,10 @@ import codecs
 import json
 
 def decode_hex_utf_8_string(hex_string):
+    if hex_string.startswith("0x"):
+        hex_string = hex_string[2:]
     return codecs.decode(hex_string, 'hex').decode('utf-8')
-
+    
 def get_keyboard_layout():
     # Run the xkbcomp command to dump the current keyboard mapping to a file
     proc = subprocess.Popen(["xkbcomp", ":0", "-"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -123,15 +125,22 @@ for mapping in keyboard_mappings:
                         
                     # Get the actual keysym values for the keycode
                     if k == 44:
-                        print(keysyms_algr_lc[k])
+                        #print(keysyms_algr_lc[k])
                         try:
                             hex = keysyms_nomodifier_lc[k].replace("0x00", "").strip()
                             hex = decode_hex_utf_8_string(hex)
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_algr_lc[k]
+                            
+                            hex = keysyms_nomodifier_lc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
                             
                     
                     elif k == 43:
@@ -141,9 +150,15 @@ for mapping in keyboard_mappings:
                             hex = "\\"+hex
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_algr_lc[k]
+                            hex = keysyms_nomodifier_lc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
                     
                     elif k == 46:
                         try:
@@ -152,10 +167,15 @@ for mapping in keyboard_mappings:
                             hex = "\\"+hex
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_algr_lc[k]   
+                            hex = keysyms_nomodifier_lc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","              
-
+                            hex = "0x"+hex+","
                     elif k == 59:
                         hex = " "
                         hex = "'"+hex+"',"
@@ -164,9 +184,17 @@ for mapping in keyboard_mappings:
                         try:
                             hex = keysyms_nomodifier_lc[k].replace("0x00", "").strip()
                             hex = decode_hex_utf_8_string(hex)
+                            hex = "'"+hex+"'"
                         except Exception:
-                            hex = keysyms_nomodifier_lc[k]
+                            hex = keysyms_nomodifier_lc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
+                            hex = "0x"+hex
 
 
                     elif k < 256:
@@ -175,9 +203,16 @@ for mapping in keyboard_mappings:
                             hex = decode_hex_utf_8_string(hex)
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_nomodifier_lc[k]
+                            hex = keysyms_nomodifier_lc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
+                          
 
                     
                     new_matrix_nomod[i][j] = hex
@@ -192,10 +227,16 @@ for mapping in keyboard_mappings:
                             hex = keysyms_shift_uc[k].replace("0x00", "").strip()
                             hex = decode_hex_utf_8_string(hex)
                             hex = "'"+hex+"',"
-                        except Exception:
-                            hex = keysyms_shift_uc[k]
+                        except Exception:           
+                            hex = keysyms_shift_uc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
 
                     elif k == 10:
                         try:
@@ -203,9 +244,15 @@ for mapping in keyboard_mappings:
                             hex = decode_hex_utf_8_string(hex)
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_shift_uc[k]
+                            hex = keysyms_shift_uc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
 
                     elif k == 43:
                         try:
@@ -213,9 +260,15 @@ for mapping in keyboard_mappings:
                             hex = decode_hex_utf_8_string(hex)
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_shift_uc[k]
+                            hex = keysyms_shift_uc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
                     
                     elif k == 46:
                         try:
@@ -223,9 +276,15 @@ for mapping in keyboard_mappings:
                             hex = decode_hex_utf_8_string(hex)
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_shift_uc[k]
-                            hex = hex.upper()
-                            hex = hex+","
+                            hex = keysyms_shift_uc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
+                            hex = hex.upper()             
+                            hex = "0x"+hex+","
 
                     elif k == 59:
                         hex = " "
@@ -235,10 +294,17 @@ for mapping in keyboard_mappings:
                          try:
                             hex = keysyms_shift_uc[k].replace("0x00", "").strip()
                             hex = decode_hex_utf_8_string(hex)
+                            hex = "'"+hex+"'"
                          except Exception:
-                            hex = keysyms_shift_uc[k]
+                            hex = keysyms_shift_uc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-
+                            hex = "0x"+hex
                     elif k < 256:
                         try:
                             hex = keysyms_shift_uc[k].replace("0x00", "").strip()
@@ -246,9 +312,15 @@ for mapping in keyboard_mappings:
                             hex = "'"+hex+"',"
                             
                         except Exception:
-                            hex = keysyms_shift_uc[k]
+                            hex = keysyms_shift_uc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
 
                     
                     new_matrix_shift[i][j] = hex
@@ -264,9 +336,15 @@ for mapping in keyboard_mappings:
                             hex = decode_hex_utf_8_string(hex)
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_algr_lc[k]
+                            hex = keysyms_algr_lc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
 
                     elif k == 10:
                         try:
@@ -274,9 +352,16 @@ for mapping in keyboard_mappings:
                             hex = decode_hex_utf_8_string(hex)
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_algr_lc[k]
+                            hex = keysyms_algr_lc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
+
 
                     elif k == 43:
                         try:
@@ -285,9 +370,16 @@ for mapping in keyboard_mappings:
                             hex = "\\"+hex
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_algr_lc[k]
+                            hex = keysyms_algr_lc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
+ 
 
                     elif k == 46:
                         try:
@@ -295,9 +387,16 @@ for mapping in keyboard_mappings:
                             hex = decode_hex_utf_8_string(hex)
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_algr_lc[k]
+                            hex = keysyms_algr_lc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
+
 
                     elif k == 59:
                         hex = " "
@@ -307,9 +406,18 @@ for mapping in keyboard_mappings:
                          try:
                             hex = keysyms_algr_lc[k].replace("0x00", "").strip()
                             hex = decode_hex_utf_8_string(hex)
+                            hex = "'"+hex+"'"
                          except Exception:
-                            hex = keysyms_algr_lc[k]
+                            hex = keysyms_algr_lc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
+                            hex = "0x"+hex
+  
 
                     elif k < 256:
                         try:
@@ -317,9 +425,16 @@ for mapping in keyboard_mappings:
                             hex = decode_hex_utf_8_string(hex)
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_algr_lc[k]
+                            hex = keysyms_algr_lc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
+
 
                     
                     new_matrix_altgr[i][j] = hex
@@ -335,9 +450,16 @@ for mapping in keyboard_mappings:
                             hex = decode_hex_utf_8_string(hex)
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_altgr_shift_uc[k]
+                            hex = keysyms_altgr_shift_uc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
+
 
                     elif k == 10:
                         try:
@@ -345,9 +467,15 @@ for mapping in keyboard_mappings:
                             hex = decode_hex_utf_8_string(hex)
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_altgr_shift_uc[k]
+                            hex = keysyms_altgr_shift_uc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
 
                     elif k == 43:
                         try:
@@ -356,9 +484,15 @@ for mapping in keyboard_mappings:
                             hex = "\\"+hex
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_altgr_shift_uc[k]
+                            hex = keysyms_altgr_shift_uc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
     
                     elif k == 46:
                         try:
@@ -366,9 +500,15 @@ for mapping in keyboard_mappings:
                             hex = decode_hex_utf_8_string(hex)
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_altgr_shift_uc[k]
+                            hex = keysyms_altgr_shift_uc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
 
                     elif k == 59:
                         hex = " "
@@ -378,9 +518,17 @@ for mapping in keyboard_mappings:
                          try:
                             hex = keysyms_altgr_shift_uc[k].replace("0x00", "").strip()
                             hex = decode_hex_utf_8_string(hex)
+                            hex = "'"+hex+"'"
                          except Exception:
-                            hex = keysyms_altgr_shift_uc[k]
+                            hex = keysyms_altgr_shift_uc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
+                            hex = "0x"+hex
 
 
                     elif k < 256:
@@ -389,9 +537,15 @@ for mapping in keyboard_mappings:
                             hex = decode_hex_utf_8_string(hex)
                             hex = "'"+hex+"',"
                         except Exception:
-                            hex = keysyms_altgr_shift_uc[k]
+                            hex = keysyms_altgr_shift_uc[k].replace("0x", "").strip()
+                            if hex.startswith("100"):
+                                hex = hex[3:]
+                            elif hex.startswith("000x"):
+                                hex = hex[4:]
+                            elif hex.startswith("000x100"):
+                                hex = hex[7:]
                             hex = hex.upper()
-                            hex = hex+","
+                            hex = "0x"+hex+","
 
                   
                     new_matrix_altgrshift[i][j] = hex    
